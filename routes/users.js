@@ -14,14 +14,14 @@ const { CloudinaryStorage } = require('multer-storage-cloudinary');
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 const storage = new CloudinaryStorage({
   cloudinary,
   params: {
-    folder: 'hackathon-user-img'
-  }
+    folder: 'hackathon-user-img',
+  },
 });
 //END UPLOAD
 
@@ -34,7 +34,8 @@ router.get('/', (req, res, next) => {
 /* CREATE INFO ON THE USER */
 
 router.get('/user-profile-edit', routeGuard, (req, res) => {
-  res.render('user/user-profile-edit');
+  const apiKey = process.env.GOOGLE_MAPS_KEY;
+  res.render('user/user-profile-edit', { apiKey });
 });
 
 router.post(
@@ -47,20 +48,26 @@ router.post(
     if (req.file) {
       images = req.file.path;
     }
-
-    User.findOne({ name })
-      .then((document) => {
-        if (!document) {
-          return User.findByIdAndUpdate(res.locals.user._id, {
-            profession: req.body.profession,
-          });
-        } else {
-          const error = new Error("There's already a user with that name.");
-          return Promise.reject(error);
-        }
-      })
+    const age = req.body.dob;
+    const gender = req.body.gender;
+    const profession = req.body.profession;
+    const orientation = req.body.sexualOrientation;
+    const disability = req.body.disability;
+    const about = req.body.about;
+    const latitude = req.body.latitude;
+    const longitude = req.body.longitude;
+    return User.findByIdAndUpdate(res.locals.user._id, {
+      name,
+      age,
+      gender,
+      profession,
+      sexualOrientation: orientation,
+      disability,
+      about,
+      photo: images,
+    })
       .then((user) => {
-        res.redirect('/home');
+        res.redirect(`/users/${res.locals.user._id}`);
       })
       .catch((error) => {
         next(error);

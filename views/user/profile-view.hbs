@@ -4,14 +4,13 @@
   <h3>My gender:</h3>
   <h3>{{userSingle.gender}}</h3>
   <h3>Preference: </h3>
-  {{ userSingle.orientation}}
+  <h3>{{ userSingle.sexualOrientation}}</h3>
   <h3>Profession: </h3>
-  {{userSingle.profession}}
+  <h3>{{userSingle.profession}}</h3>
   <h3>Disabilities: </h3>
-  {{#each userSingle.disabilities}}
-  <h3>{{this}}</h3>
-  {{/each}}
+  <h3>{{userSingle.disability}}</h3>
   <h3>About me: </h3>
+  <h3>{{ userSingle.about}}</h3>
 
   <footer>
 {{#if isOwner}}

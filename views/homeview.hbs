@@ -3,13 +3,13 @@
 <div class="container">
     <h1>Users</h1>
     {{#each updatedUsers}}
-        <div class="card col" style="padding: 0;" >
+        <div class="card col" style="padding: 0; color:black" >
         <img src="{{ photo }}" class="card-img-top" alt="..." >
         <div class="card-body">
             <h3 class="card-title">{{name}}</h3>
             <hr>
             <h5>Gender: {{gender}}</h5>
-            <h5>Disabilities: {{#each disabilities}} <strong>{{this}}</strong>{{/each}}</h5>
+            <h5>Disabilities <strong>{{disability}}</strong></h5>
         </div>
         <a href="/users/{{_id}}" class="btn btn-primary">See Profile</a>
     </div>

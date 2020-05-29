@@ -2,6 +2,10 @@
 *, *:before, *:after {
   box-sizing: border-box; }
 
+body {
+  min-height: 100vh;
+  background-color: #343a40 !important; }
+
 .body {
   max-width: 5em;
   padding: 0 1em;

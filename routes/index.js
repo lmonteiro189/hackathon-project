@@ -17,7 +17,6 @@ router.get('/', (req, res, next) => {
 router.get('/homeview', routeGuard, (req, res, next) => {
   User.find()
     .then((users) => {
-      //TODO Remove own profile from view
       const updatedUsers = users.filter((user) => {
         let userId = user._id;
         userId = userId.toString();

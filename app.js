@@ -34,9 +34,10 @@ app.use(
   sassMiddleware({
     src: join(__dirname, 'public'),
     dest: join(__dirname, 'public'),
-    outputStyle: process.env.NODE_ENV === 'development' ? 'nested' : 'compressed',
+    outputStyle:
+      process.env.NODE_ENV === 'development' ? 'nested' : 'compressed',
     force: process.env.NODE_ENV === 'development',
-    sourceMap: true
+    sourceMap: true,
   })
 );
 
@@ -53,12 +54,11 @@ app.use(
       maxAge: 15 * 60 * 60 * 24 * 1000,
       sameSite: 'lax',
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production'
     },
     store: new (connectMongo(expressSession))({
       mongooseConnection: mongoose.connection,
-      ttl: 60 * 60 * 24
-    })
+      ttl: 60 * 60 * 24,
+    }),
   })
 );
 

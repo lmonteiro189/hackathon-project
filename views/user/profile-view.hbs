@@ -12,7 +12,19 @@
   <h3>{{this}}</h3>
   {{/each}}
   <h3>About me: </h3>
+
+  <footer>
+{{#if isOwner}}
+  <a href="" class="btn btn-primary">Edit Profile</a>
+{{else}}
+<ul class="nav justify-content-between bg-secondary m-0">
+  <li class="nav-item">
+    <a class="nav-link active" href="/homeview">Back</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Match</a>
+</ul>
+{{/if}}
+</footer>
 </div>
 
-{{#if isOwner}}
-{{/if}}

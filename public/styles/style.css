@@ -107,4 +107,20 @@ textarea {
   background-size: 100%;
   color: white; }
 
+.container-edit-profile {
+  background-color: #343a40;
+  background-size: 100%;
+  color: white;
+  padding: 15px; }
+  .container-edit-profile form {
+    color: white; }
+
+.color-lines {
+  color: white !important;
+  margin-bottom: 10px; }
+
+#aboutyour {
+  background-color: white;
+  color: black; }
+
 /*# sourceMappingURL=style.css.map */

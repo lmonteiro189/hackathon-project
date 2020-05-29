@@ -1,4 +1,4 @@
-<div class="container edit-profile">
+<div class="container-edit-profile">
 <form action="/user/{{ user._id }}/user-profile-edit" method="POST" enctype="multipart/form-data">
     
     <input type="text" name="name" placeholder="Name" value="{{user.name}}">
@@ -11,7 +11,7 @@
     <input required id="profession-input" type="text" 
       name="profession" placeholder="Profession" class="input">
 
-    <select name="gender" id="" required>
+    <select name="gender" class="color-lines" required>
       <option value="">Select gender</option>
       <option value="Male">Male</option>
       <option value="Female">Female</option>
@@ -33,7 +33,7 @@
       <option value="Other">Other</option>
     </select>
 
-    <select name="sexualOrientation" id="" required>
+    <select name="sexualOrientation" class="color-lines" required>
       <option value="">Select Orientation</option>
       <option value="Heterosexual">Heterosexual</option>
       <option value="Homosexual">Homosexual</option>
@@ -42,7 +42,7 @@
     </select>
 
 
-    <select name="disability" id="" required>
+    <select name="disability" class="color-lines" required>
       <option value="">Select Disability</option>
       <option value="Blindness">Blindness</option>
       <option value="Low-Vision">Low-Vision</option>
@@ -72,15 +72,15 @@
       <option value="Other"></option>
     </select>
 
-    <textarea name="about" id="" cols="30" rows="10" required>About yourself</textarea>
+    <textarea name="about" id="aboutyour" cols="30" rows="10" required>About yourself</textarea>
 
     <div class="container">
   <div id="map-container"></div>
-<button id="locate-me" class="btn btn-primary" type="button">Use my position</button>
-    <input type="text" name="latitude" id="location-lat-input">
-    <input type="text" name="longitude" id="location-lng-input">
+<button id="locate-me" class="btn btn-secondary btn-lg btn-block" type="button">Use my position</button>
+    <input type="hidden"  name="latitude" id="location-lat-input">
+    <input type="hidden" name="longitude" id="location-lng-input">
 
-    <button class="button3">Save</button>
+    <button class="btn btn-secondary btn-lg  btn-block">Save</button>
   
 </form>
 </div>

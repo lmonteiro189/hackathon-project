@@ -1,2 +1,7 @@
-<h1>User Profile</h1>
-<p>{{name}}</p>
+{{#if owner}}
+<h1>My Profile</h1>
+{{else}}
+<p>{{user.name}}s Profile</p>
+{{/if}}
+<p>{{user.image}}Image goes here</p>
+<p>About</p>

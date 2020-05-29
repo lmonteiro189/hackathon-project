@@ -52,7 +52,7 @@ router.post(
       .then((document) => {
         if (!document) {
           return User.findByIdAndUpdate(res.locals.user._id, {
-            name: req.body.name
+            profession: req.body.profession,
           });
         } else {
           const error = new Error("There's already a user with that name.");

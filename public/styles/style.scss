@@ -49,6 +49,7 @@ input {
   margin: 5px 0;
   display: flex;
   align-items: flex-start;
+  background-color: white;
 }
 textarea,
 button,
@@ -75,8 +76,13 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2em;
+  margin: auto;
   flex-direction: column;
+  background-image: url('/images/weelchair.jpeg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 812px;
   img {
     display: flex;
     justify-content: center;
@@ -110,4 +116,9 @@ textarea {
   border: none;
   display: flex;
   justify-content: left;
+}
+.container {
+  background-color: rgb(52, 58, 64);
+  background-size: 100%;
+  color: white;
 }

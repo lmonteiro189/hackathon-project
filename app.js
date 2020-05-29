@@ -17,6 +17,7 @@ const indexRouter = require('./routes/index');
 const authenticationRouter = require('./routes/authentication');
 const userRouter = require('./routes/users');
 const placesRouter = require('./routes/places');
+const chat2Router = require('./routes/chat2');
 
 //CONNECT PASSPORT
 const passport = require('passport');
@@ -75,6 +76,7 @@ app.use('/', indexRouter);
 app.use('/authentication', authenticationRouter);
 app.use('/user', userRouter);
 app.use('/places', placesRouter);
+app.use('/chat2', chat2Router);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {

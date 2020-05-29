@@ -91,4 +91,9 @@ textarea {
 .edit-profile * {
   margin-bottom: 1em; }
 
+.nav-link {
+  border: none;
+  display: flex;
+  justify-content: left; }
+
 /*# sourceMappingURL=style.css.map */

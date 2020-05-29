@@ -53,6 +53,7 @@ router.post(
     const profession = req.body.profession;
     const orientation = req.body.sexualOrientation;
     const disability = req.body.disability;
+    const about = req.body.about;
     const latitude = req.body.latitude;
     const longitude = req.body.longitude;
     return User.findByIdAndUpdate(res.locals.user._id, {
@@ -62,6 +63,7 @@ router.post(
       profession,
       sexualOrientation: orientation,
       disability,
+      about,
       photo: images,
     })
       .then((user) => {

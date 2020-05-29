@@ -26,7 +26,6 @@ router.get('/homeview', routeGuard, (req, res, next) => {
         console.log(userId === currentUserid);
         return !(userId === currentUserid);
       });
-      console.log(updatedUsers);
       res.render('homeview', { updatedUsers });
     })
     .catch((error) => {});

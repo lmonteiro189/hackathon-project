@@ -26,18 +26,6 @@ a {
 
 nav {
   display: inline-block;
-  // flex-direction: row-reverse;
-  // a,
-  // button {
-  //   padding: 1em 0;
-  //   border: 0;
-  //   &:not(:last-child) {
-  //     margin-right: 1em;
-  //   }
-  //   &:first-child {
-  //     margin-right: auto;
-  //   }
-  // }
 }
 
 img {
@@ -123,4 +111,9 @@ textarea {
   * {
     margin-bottom: 1em;
   }
+}
+.nav-link {
+  border: none;
+  display: flex;
+  justify-content: left;
 }

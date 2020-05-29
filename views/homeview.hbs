@@ -1,11 +1,19 @@
 <h1>Homeview </h1>
 
-{{!-- {{#each users}} --}}
-<div>
-    <p>IMAGE PROFILE XY</p>
+<div class="container">
+    {{#each users}}
+    <a href="/users/{{_id}}">
+        <div class="card col" style="padding: 0;" >
+        <img src="{{ photo }}" class="card-img-top" alt="..." >
+        <div class="card-body">
+            <h3 class="card-title">{{name}}</h3>
+            <hr>
+            <h5>Gender: {{gender}}</h5>
+            <h5>Disabilities: {{#each disabilities}} <strong>{{this}}</strong>{{/each}}</h5>
+        </div>
+        <a href="#" class="btn btn-primary">Match</a>
+    </div>
+    </a>
+    
+    {{/each}}
 </div>
-<div>
-    <a href="/profile/{{_id}}"><button>Match</button></a>
-
-</div>
-{{!-- {{/each}} --}}

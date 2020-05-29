@@ -13,9 +13,22 @@ const schema = new mongoose.Schema({
     lowercase: true,
     trim: true
   },
+  photo: {
+    type: String
+  },
+  githubId: {
+    type: String
+  },
   passwordHash: {
     type: String
-  }
+  },
+  coordinates: [
+    {
+      type: Number,
+      min: -180,
+      max: 180
+    }
+  ]
 });
 
 module.exports = mongoose.model('User', schema);

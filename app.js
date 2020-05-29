@@ -15,6 +15,11 @@ const bindUserToViewLocals = require('./middleware/bind-user-to-view-locals.js')
 const indexRouter = require('./routes/index');
 const authenticationRouter = require('./routes/authentication');
 
+//CONNECT PASSPORT
+const passport = require("passport");
+require("./config-passport");
+//END CONNECT
+
 const app = express();
 
 app.set('views', join(__dirname, 'views'));
@@ -41,7 +46,7 @@ app.use(
     resave: true,
     saveUninitialized: false,
     cookie: {
-      maxAge: 60 * 60 * 24 * 15,
+      maxAge: 15 * 60 * 60 * 24 * 1000,
       sameSite: 'lax',
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production'
@@ -52,6 +57,14 @@ app.use(
     })
   })
 );
+
+require("./config-passport");
+
+//PASSPORT INIT
+app.use(passport.initialize());
+app.use(passport.session());
+//END INT
+
 app.use(basicAuthenticationDeserializer);
 app.use(bindUserToViewLocals);
 

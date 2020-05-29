@@ -1,52 +1,64 @@
-*, *:before, *:after {
-  box-sizing: border-box; }
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
 
-body {
-  max-width: 52em;
+.body {
+  max-width: 5em;
   padding: 0 1em;
   margin: 0 auto;
   font-family: sans-serif;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 2; }
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 2;
+}
 
 a {
   color: inherit;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 nav {
-  display: flex; }
-  nav a,
-  nav button {
-    padding: 1em 0;
-    border: 0; }
-    nav a:not(:last-child),
-    nav button:not(:last-child) {
-      margin-right: 1em; }
-    nav a:first-child,
-    nav button:first-child {
-      margin-right: auto; }
-
-h1,
-h2,
-h3,
-p {
-  margin: 0;
-  line-height: inherit; }
-  h1:not(:last-child),
-  h2:not(:last-child),
-  h3:not(:last-child),
-  p:not(:last-child) {
-    margin-bottom: 1rem; }
+  display: inline-block;
+  flex-direction: row-reverse;
+}
+nav a,
+nav button {
+  padding: 1em 0;
+  border: 0;
+}
+nav a:not(:last-child),
+nav button:not(:last-child) {
+  margin-right: 1em;
+}
+nav a:first-child,
+nav button:first-child {
+  margin-right: auto;
+}
 
 img {
   width: 100%;
-  max-width: 100%; }
+  max-width: 100%;
+}
 
 form {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
-input,
+input {
+  border: 1px solid rgba(191, 191, 191, 0.5);
+  border-radius: 0;
+  margin: auto;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  padding: 7px 70px;
+  margin: 5px 0;
+  display: flex;
+  align-items: flex-start;
+}
+
 textarea,
 button,
 .btn {
@@ -56,14 +68,51 @@ button,
   margin-bottom: 1em;
   font: inherit;
   color: inherit;
-  background-color: transparent; }
+  background-color: transparent;
+}
 
 textarea {
   min-height: 8em;
-  resize: vertical; }
+  resize: vertical;
+}
 
 #map-container {
   width: 100%;
-  height: 30em; }
+  height: 30em;
+}
+
+.app-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+  flex-direction: column;
+}
+.app-name img {
+  display: flex;
+  justify-content: center;
+  padding-top: 2em;
+  margin: auto;
+}
+
+.button-sign {
+  border-radius: 10px;
+  color: inherit;
+  background-color: white;
+  margin: 0.7em 28%;
+  font-size: 14px;
+  padding: 0;
+}
+
+.button-sign-git {
+  border-radius: 10px;
+  color: white;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  padding: 7px 92px;
+  margin: 2em 0;
+  font-size: 14px;
+}
 
 /*# sourceMappingURL=style.css.map */

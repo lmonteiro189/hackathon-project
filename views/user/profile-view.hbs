@@ -1,0 +1,30 @@
+<div class="container">
+  <img src="{{ userSingle.photo }}" alt="">
+  <h1>{{ userSingle.name }}, {{userSingle.age}}</h1>
+  <h3>My gender:</h3>
+  <h3>{{userSingle.gender}}</h3>
+  <h3>Preference: </h3>
+  {{ userSingle.orientation}}
+  <h3>Profession: </h3>
+  {{userSingle.profession}}
+  <h3>Disabilities: </h3>
+  {{#each userSingle.disabilities}}
+  <h3>{{this}}</h3>
+  {{/each}}
+  <h3>About me: </h3>
+
+  <footer>
+{{#if isOwner}}
+  <a href="" class="btn btn-primary">Edit Profile</a>
+{{else}}
+<ul class="nav justify-content-between bg-secondary m-0">
+  <li class="nav-item">
+    <a class="nav-link active" href="/homeview">Back</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Match</a>
+</ul>
+{{/if}}
+</footer>
+</div>
+

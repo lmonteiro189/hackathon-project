@@ -36,13 +36,19 @@ const schema = new mongoose.Schema({
       'Other'
     ]
   },
+  age: {
+    type: Number
+  },
+  profession: {
+    type: String
+  },
   sexualOrientation: {
     type: String,
     enum: ['Heterosexual', 'Homosexual', 'Bisexual', 'Asexual']
   },
   disability: {
     type: String,
-    enum:  [
+    enum: [
       'Blindness',
       'Low-Vision',
       'Deuteranomaly',

@@ -88,4 +88,9 @@ textarea {
 .font-logo {
   font-family: 'Bebas Neue', cursive; }
 
+.nav-link {
+  border: none;
+  display: flex;
+  justify-content: left; }
+
 /*# sourceMappingURL=style.css.map */

@@ -15,10 +15,11 @@ const basicAuthenticationDeserializer = require('./middleware/basic-authenticati
 const bindUserToViewLocals = require('./middleware/bind-user-to-view-locals.js');
 const indexRouter = require('./routes/index');
 const authenticationRouter = require('./routes/authentication');
+const userRouter = require('./routes/users');
 
 //CONNECT PASSPORT
-const passport = require("passport");
-require("./config-passport");
+const passport = require('passport');
+require('./config-passport');
 //END CONNECT
 
 const app = express();
@@ -31,10 +32,9 @@ app.use(
   sassMiddleware({
     src: join(__dirname, 'public'),
     dest: join(__dirname, 'public'),
-    outputStyle:
-      process.env.NODE_ENV === 'development' ? 'nested' : 'compressed',
+    outputStyle: process.env.NODE_ENV === 'development' ? 'nested' : 'compressed',
     force: process.env.NODE_ENV === 'development',
-    sourceMap: true,
+    sourceMap: true
   })
 );
 
@@ -51,16 +51,16 @@ app.use(
       maxAge: 15 * 60 * 60 * 24 * 1000,
       sameSite: 'lax',
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
+      secure: process.env.NODE_ENV === 'production'
     },
     store: new (connectMongo(expressSession))({
       mongooseConnection: mongoose.connection,
-      ttl: 60 * 60 * 24,
-    }),
+      ttl: 60 * 60 * 24
+    })
   })
 );
 
-require("./config-passport");
+require('./config-passport');
 
 //PASSPORT INIT
 app.use(passport.initialize());
@@ -72,6 +72,7 @@ app.use(bindUserToViewLocals);
 
 app.use('/', indexRouter);
 app.use('/authentication', authenticationRouter);
+app.use('/user', userRouter);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {

@@ -13,6 +13,64 @@ const schema = new mongoose.Schema({
     lowercase: true,
     trim: true
   },
+  gender: {
+    type: String,
+    enum: [
+      'Male',
+      'Female',
+      'Agender',
+      'Androgyne',
+      'Bigender',
+      'Cis',
+      'Cisgender',
+      'Gender Fluid',
+      'Intersex',
+      'Neutrois',
+      'Non-binary',
+      'Pangender',
+      'Trans',
+      'Transgender',
+      'Transsexual',
+      'Two-Spirit',
+      'Neither',
+      'Other'
+    ]
+  },
+  sexualOrientation: {
+    type: String,
+    enum: ['Heterosexual', 'Homosexual', 'Bisexual', 'Asexual']
+  },
+  disability: {
+    type: String,
+    enum:  [
+      'Blindness',
+      'Low-Vision',
+      'Deuteranomaly',
+      'Protanomaly',
+      'Protanopia',
+      'Deuteranopia',
+      'Tritanomaly',
+      'Tritanopia',
+      'Complete color blindness',
+      'Leprosy Cured Persons',
+      'Hearing Impairment',
+      'Locomotor Disability',
+      'Dwarfism',
+      'Intellectual Disability',
+      'Mental Illness',
+      'Autism Spectrum Disorder',
+      'Cerebral Palsy',
+      'Muscular Dystrophy',
+      'Multiple Sclerosis',
+      'Speech and Language Disability',
+      'Hemophilia',
+      'Thalassemia',
+      'Multiple Disabilities',
+      'Acid Attack Survivors',
+      'Parkinson’s Disease',
+      'Other'
+    ]
+  },
   photo: {
     type: String
   },

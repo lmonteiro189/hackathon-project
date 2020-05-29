@@ -29,8 +29,9 @@ passport.use(
     {
       clientID: process.env.GITHUB_API_CLIENT_ID,
       clientSecret: process.env.GITHUB_API_CLIENT_SECRET,
-      callbackURL: 'http://localhost:3000/authentication/github-callback',
-      scope: 'user:email'
+      callbackURL:
+        'https://hackathon-realmatch.herokuapp.com/authentication/github-callback',
+      scope: 'user:email',
     },
     (accessToken, refreshToken, profile, callback) => {
       console.log(profile);
@@ -40,7 +41,7 @@ passport.use(
       const githubId = profile.id;
 
       User.findOne({
-        githubId
+        githubId,
       })
 
         .then((user) => {
@@ -52,7 +53,7 @@ passport.use(
               email,
               name,
               photo,
-              githubId
+              githubId,
             });
           }
         })

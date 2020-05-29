@@ -15,6 +15,7 @@ const basicAuthenticationDeserializer = require('./middleware/basic-authenticati
 const bindUserToViewLocals = require('./middleware/bind-user-to-view-locals.js');
 const indexRouter = require('./routes/index');
 const authenticationRouter = require('./routes/authentication');
+const placesRouter = require('./routes/places');
 
 //CONNECT PASSPORT
 const passport = require('passport');
@@ -71,7 +72,7 @@ app.use(bindUserToViewLocals);
 
 app.use('/', indexRouter);
 app.use('/authentication', authenticationRouter);
-app.use('');
+app.use('/places', placesRouter);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {

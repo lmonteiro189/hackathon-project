@@ -34,6 +34,7 @@ input {
   margin: auto;
   font: inherit;
   color: inherit;
+  color: black;
   background-color: transparent;
   padding: 7px 70px;
   margin: 5px 0;
@@ -44,6 +45,7 @@ input {
 textarea,
 button,
 .btn {
+  color: black;
   padding: 1em;
   border: 1px solid rgba(191, 191, 191, 0.5);
   border-radius: 0;
@@ -51,6 +53,10 @@ button,
   font: inherit;
   color: inherit;
   background-color: transparent; }
+
+option,
+select {
+  color: black; }
 
 textarea {
   min-height: 8em;

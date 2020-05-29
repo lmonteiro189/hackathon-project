@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 *, *:before, *:after {
   box-sizing: border-box; }
 
@@ -5,8 +6,7 @@
   max-width: 5em;
   padding: 0 1em;
   margin: 0 auto;
-  font-family: sans-serif;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   line-height: 2; }
 
 a {
@@ -14,18 +14,7 @@ a {
   text-decoration: none; }
 
 nav {
-  display: inline-block;
-  flex-direction: row-reverse; }
-  nav a,
-  nav button {
-    padding: 1em 0;
-    border: 0; }
-    nav a:not(:last-child),
-    nav button:not(:last-child) {
-      margin-right: 1em; }
-    nav a:first-child,
-    nav button:first-child {
-      margin-right: auto; }
+  display: inline-block; }
 
 img {
   width: 100%;
@@ -95,5 +84,8 @@ textarea {
   padding: 7px 92px;
   margin: 2em 0;
   font-size: 14px; }
+
+.font-logo {
+  font-family: 'Bebas Neue', cursive; }
 
 /*# sourceMappingURL=style.css.map */

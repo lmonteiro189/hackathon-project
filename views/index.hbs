@@ -2,5 +2,66 @@
   <h1>{{title}}</h1>
   <p>Welcome to {{title}}</p>
   <button class="btn btn-primary">Hello</button>
+
 </div>
 
+<div class="container">
+  <div id="map-container"></div>
+<button id="locate-me" class="btn btn-primary">Use my position</button>
+
+<form action="/place/search">
+  <input type="hidden" name="latitude" id="location-lat-input">
+  <input type="hidden" name="longitude" id="location-lng-input">
+
+  <button>Submit</button>
+</form>
+
+</div>
+
+
+<script>
+  function initMap() {
+
+    const $mapContainer = document.getElementById('map-container');
+    const $latInput = document.getElementById('location-lat-input');
+    const $lngInput = document.getElementById('location-lng-input');
+
+    const map = new window.google.maps.Map($mapContainer, {
+      center: { lat: 38.75, lng: -9.15},
+      zoom: 11
+    });
+
+    let marker;
+
+    const $triggerButton = document.getElementById('locate-me');
+
+    $triggerButton.addEventListener('click', () => {
+      navigator.geolocation.getCurrentPosition(result => {
+        newPosition(result.coords.latitude, result.coords.longitude);
+      })
+    });
+
+    map.addListener('click', event => {
+      newPosition(event.latLng.lat(), event.latLng.lng());
+    }) 
+
+
+
+    const newPosition = (lat, lng) => {
+      $latInput.value = lat;
+      $lngInput.value = lng;
+      if(marker) {
+        marker.setMap(null);
+      };
+      marker = new window.google.maps.Marker({
+        map,
+        position: {
+          lat,
+          lng
+        }
+      });
+    }
+  }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key={{apiKey}}&callback=initMap"></script>

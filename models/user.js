@@ -5,36 +5,36 @@ const mongoose = require('mongoose');
 const schema = new mongoose.Schema({
   name: {
     type: String,
-    trim: true,
+    trim: true
   },
   email: {
     type: String,
     required: true,
     lowercase: true,
-    trim: true,
+    trim: true
   },
   photo: {
-    type: String,
+    type: String
   },
   githubId: {
-    type: String,
+    type: String
   },
   passwordHash: {
-    type: String,
+    type: String
   },
   location: {
     type: {
       type: String,
-      default: 'Point',
+      default: 'Point'
     },
     coordinates: [
       {
         type: Number,
         min: -180,
-        max: 180,
-      },
-    ],
-  },
+        max: 180
+      }
+    ]
+  }
 });
 
 module.exports = mongoose.model('User', schema);

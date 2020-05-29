@@ -10,7 +10,7 @@ $grey: hsla(0, 0, 75%, 0.5);
 }
 
 body {
-  max-width: 52em;
+  max-width: 5em;
   padding: 0 1em;
   margin: 0 auto;
   font-family: sans-serif;
@@ -38,17 +38,6 @@ nav {
   }
 }
 
-h1,
-h2,
-h3,
-p {
-  margin: 0;
-  line-height: inherit;
-  &:not(:last-child) {
-    margin-bottom: 1rem;
-  }
-}
-
 img {
   width: 100%;
   max-width: 100%;
@@ -59,7 +48,18 @@ form {
   flex-direction: column;
 }
 
-input,
+input {
+  border: 1px solid $grey;
+  border-radius: 0;
+  margin: auto;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  padding: 7px 70px;
+  margin: 5px 0;
+  display: flex;
+  align-items: flex-start;
+}
 textarea,
 button,
 .btn {
@@ -80,4 +80,36 @@ textarea {
 #map-container {
   width: 100%;
   height: 30em;
+}
+.app-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+  flex-direction: column;
+  img {
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+    margin: auto;
+  }
+}
+.button-sign {
+  border-radius: 10px;
+  color: inherit;
+  background-color: transparent;
+  margin: 0.7em 28%;
+  font-size: 14px;
+  padding: 0;
+}
+
+.button-sign-git {
+  border-radius: 10px;
+  color: white;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  padding: 7px 92px;
+  margin: 2em 0;
+  font-size: 14px;
 }

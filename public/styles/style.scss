@@ -128,6 +128,10 @@ textarea {
   height: 812px;
   background-size: 100%;
   color: white;
+  form,
+  input {
+    color: black;
+  }
 }
 .container-edit-profile {
   background-color: rgb(52, 58, 64);

@@ -35,6 +35,21 @@ const schema = new mongoose.Schema({
       },
     ],
   },
+  age: {
+    type: Number,
+  },
+  profession: {
+    type: String,
+  },
+  gender: {
+    type: String,
+  },
+  orientation: {
+    type: String,
+  },
+  disability: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model('User', schema);

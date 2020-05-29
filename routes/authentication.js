@@ -70,7 +70,6 @@ router.post('/sign-out', (req, res, next) => {
   res.redirect('/');
 });
 
-
 //GITHUB AUTHENTICATION
 
 router.get(
@@ -126,6 +125,5 @@ router.post('/sign-out', (req, res, next) => {
   req.logout();
   res.redirect('/');
 });
-
 
 module.exports = router;

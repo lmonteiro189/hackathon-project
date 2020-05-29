@@ -7,6 +7,11 @@ const User = require('./../models/user');
 
 const router = new Router();
 
+//GITHUB ROUTER
+const passport = require('passport');
+const routeGuard = require('./../middleware/route-guard');
+//
+
 router.get('/sign-up', (req, res, next) => {
   res.render('sign-up');
 });
@@ -64,5 +69,63 @@ router.post('/sign-out', (req, res, next) => {
   req.session.destroy();
   res.redirect('/');
 });
+
+
+//GITHUB AUTHENTICATION
+
+router.get(
+  '/github',
+  passport.authenticate('github', {
+    successRedirect: '/',
+    failureRedirect: '/error'
+  })
+);
+
+router.get(
+  '/github-callback',
+  passport.authenticate('github', {
+    successRedirect: '/',
+    failureRedirect: '/error'
+  })
+);
+
+//SIGN-UP
+
+router.get('/join-us', (req, res, next) => {
+  //console.log(req.user);
+  res.render('join-us');
+});
+
+router.post(
+  '/join-us',
+  passport.authenticate('join-us', {
+    successRedirect: '/',
+    failureRedirect: '/join-us'
+  })
+);
+
+//SIGN-IN
+
+router.get('/join-us', (req, res, next) => {
+  res.render('join-us');
+});
+
+router.post(
+  '/join-us',
+  passport.authenticate('join-us', {
+    successRedirect: '/',
+    failureRedirect: '/join-us'
+  })
+);
+
+router.get('/user/private', routeGuard, (req, res, next) => {
+  res.render('user/private');
+});
+
+router.post('/sign-out', (req, res, next) => {
+  req.logout();
+  res.redirect('/');
+});
+
 
 module.exports = router;

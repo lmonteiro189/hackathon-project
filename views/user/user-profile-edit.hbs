@@ -1,5 +1,8 @@
-<form action="/user/{{ user._id }}/user-profile-edit" method="POST">
+<div class="container edit-profile">
+<form action="/user/{{ user._id }}/user-profile-edit" method="POST" enctype="multipart/form-data">
     
+    <input type="text" name="name" placeholder="Name" value="{{user.name}}">
+
     <input id="upload-image-input" name="images" type="file" />
 
     <input required id="dob-input" type="number" 
@@ -8,36 +11,78 @@
     <input required id="profession-input" type="text" 
       name="profession" placeholder="Profession" class="input">
 
-    <input required id="gender-input" type="option" 
-      name="gender" placeholder="Gender" class="input">
+    <select name="gender" id="" required>
+      <option value="">Select gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Agender">Agender</option>
+      <option value="Androgyne">Androgyne</option>
+      <option value="Bigender">Bigender</option>
+      <option value="Cis">Cis</option>
+      <option value="Cisgender">Cisgender</option>
+      <option value="Gender Fluid">Gender Fluid</option>
+      <option value="Intersex">Intersex</option>
+      <option value="Neutrois">Neutrois</option>
+      <option value="Non-binary">Non-binary</option>
+      <option value="Pangender">Pangender</option>
+      <option value="Trans">Trans</option>
+      <option value="Transgender">Transgender</option>
+      <option value="Transsexual">Transsexual</option>
+      <option value="Two-Spirit">Two-Spirit</option>
+      <option value="Neither">Neither</option>
+      <option value="Other">Other</option>
+    </select>
 
-    <input required id="sexualOrientation-input" type="option" 
-      name="sexualOrientation" placeholder="Sexual Orientation" class="input">
-    
-    <input required id="disability-input" type="option" 
-      name="disability" placeholder="Disability" class="input">
+    <select name="sexualOrientation" id="" required>
+      <option value="">Select Orientation</option>
+      <option value="Heterosexual">Heterosexual</option>
+      <option value="Homosexual">Homosexual</option>
+      <option value="Bisexual">Bisexual</option>
+      <option value="Asexual">Asexual</option>
+    </select>
 
-  <button class="button3">Save</button>
+
+    <select name="disability" id="" required>
+      <option value="">Select Disability</option>
+      <option value="Blindness">Blindness</option>
+      <option value="Low-Vision">Low-Vision</option>
+      <option value="Deuteranomaly">Deuteranomaly</option>
+      <option value="Protanomaly">Protanomaly</option>
+      <option value="Protanopia">Protanopia</option>
+      <option value="Deuteranopia">Deuteranopia</option>
+      <option value="Tritanomaly">Tritanomaly</option>
+      <option value="Tritanopia">Tritanopia</option>
+      <option value="Complete color blindness">Complete color blindness</option>
+      <option value="Leprosy Cured Persons">Leprosy Cured Persons</option>
+      <option value="Hearing Impairment">Hearing Impairment</option>
+      <option value="Locomotor Disability">Locomotor Disability</option>
+      <option value="Dwarfism">Dwarfism</option>
+      <option value="Intellectual Disability">Intellectual Disability</option>
+      <option value="Mental Illness">Mental Illness</option>
+      <option value="Autism Spectrum Disorder">Autism Spectrum Disorder</option>
+      <option value="Cerebral Palsy">Cerebral Palsy</option>
+      <option value="Muscular Dystrophy">Muscular Dystrophy</option>
+      <option value="Multiple Sclerosis">Multiple Sclerosis</option>
+      <option value="Speech and Language Disability">Speech and Language Disability</option>
+      <option value="Hemophilia">Hemophilia</option>
+      <option value="Thalassemia">Thalassemia</option>
+      <option value="Multiple Disabilities">Multiple Disabilities</option>
+      <option value="Acid Attack Survivors">Acid Attack Survivors</option>
+      <option value="Parkinson’s Disease">Parkinson’s Disease</option>
+      <option value="Other"></option>
+    </select>
+
+    <div class="container">
+  <div id="map-container"></div>
+<button id="locate-me" class="btn btn-primary" type="button">Use my position</button>
+    <input type="text" name="latitude" id="location-lat-input">
+    <input type="text" name="longitude" id="location-lng-input">
+
+    <button class="button3">Save</button>
   
 </form>
-
-
-<div class="container">
-
 </div>
 
-<div class="container">
-  <div id="map-container"></div>
-<button id="locate-me" class="btn btn-primary">Use my position</button>
-
-<form action="/place/search">
-  <input type="text" name="latitude" id="location-lat-input">
-  <input type="text" name="longitude" id="location-lng-input">
-
-  <button>Submit</button>
-</form>
-
-</div>
 
 
 <script>

@@ -1,0 +1,18 @@
+{{#if owner}}
+  <h1>My Profile</h1>
+  {{else}}
+    <p>{{user.name}}s Profile</p>
+    <img src="{{ photo }}" class="profile-picture-private"></a> 
+{{/if}}
+<p>About</p>
+
+<form action="/user/user" method="POST" enctype="multipart/form-data">
+    
+    <label for="upload-image-input" class="upload-image-input">Update Image</label>
+    <input id="upload-image-input" name="images" type="file" />
+    
+    <button>Update Image</button>
+
+  </form>
+
+

@@ -9,8 +9,8 @@ router.get('/', (req, res, next) => {
   res.render('index', { apiKey });
 });
 
-router.get('/private', routeGuard, (req, res, next) => {
-  res.render('private');
+router.get('/homeview', routeGuard, (req, res, next) => {
+  res.render('homeview');
 });
 
 module.exports = router;

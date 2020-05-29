@@ -1,7 +1,4 @@
 <div class="container">
-  <h1>{{title}}</h1>
-  <p>Welcome to {{title}}</p>
-  <button class="btn btn-primary">Hello</button>
 
 </div>
 
@@ -10,8 +7,8 @@
 <button id="locate-me" class="btn btn-primary">Use my position</button>
 
 <form action="/place/search">
-  <input type="hidden" name="latitude" id="location-lat-input">
-  <input type="hidden" name="longitude" id="location-lng-input">
+  <input type="text" name="latitude" id="location-lat-input">
+  <input type="text" name="longitude" id="location-lng-input">
 
   <button>Submit</button>
 </form>
@@ -65,3 +62,8 @@
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key={{apiKey}}&callback=initMap"></script>
+  <h2>logo</h2>
+  <p>first home page</p>
+  <a href="/authentication/sign-in">Sign In</a><br>
+  <a href="/authentication/sign-up">Sign Up</a>
+</div>

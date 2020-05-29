@@ -1,29 +1,29 @@
 <div class="container">
-  <img src="{{ userSingle.photo }}" alt="">
-  <h1>{{ userSingle.name }}, {{userSingle.age}}</h1>
-  <h3>My gender:</h3>
-  <h3>{{userSingle.gender}}</h3>
-  <h3>Preference: </h3>
-  <h3>{{ userSingle.sexualOrientation}}</h3>
-  <h3>Profession: </h3>
-  <h3>{{userSingle.profession}}</h3>
-  <h3>Disabilities: </h3>
-  <h3>{{userSingle.disability}}</h3>
-  <h3>About me: </h3>
-  <h3>{{ userSingle.about}}</h3>
-
-  <footer>
+  <div class="card col" style="color: black;">
+  <img src="{{ userSingle.photo }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h1 class="card-title">{{ userSingle.name }}, {{userSingle.age}}</h1>
+    <hr>
+    <h3 class="card-text">My gender: {{userSingle.gender}}</h3>
+        <h3 class="card-text">Preference: {{userSingle.sexualOrientation}}</h3>
+            <h3 class="card-text">Profession: {{userSingle.profession}}</h3>
+                <h3 class="card-text">Disabilities: {{userSingle.disability}}</h3>
+                    <h3 class="card-text">About me: {{userSingle.about}}</h3>
+                      <footer>
 {{#if isOwner}}
   <a href="/user/user-profile-edit" class="btn btn-primary">Edit Profile</a>
 {{else}}
-<ul class="nav justify-content-between bg-secondary m-0">
+<ul class="nav justify-content-between m-0">
   <li class="nav-item">
-    <a class="nav-link active" href="/homeview">Back</a>
+    <a class="nav-link active" href="/homeview" style="font-size: 2em;">Back</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Match</a>
+    <a class="nav-link" href="#" style="font-size: 2em;">Match</a>
 </ul>
 {{/if}}
 </footer>
+  </div>
+</div>
+
 </div>
 

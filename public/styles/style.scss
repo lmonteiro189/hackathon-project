@@ -11,6 +11,11 @@ $grey: hsla(0, 0, 75%, 0.5);
   }
 }
 
+body {
+  min-height: 100vh;
+  background-color: rgb(52, 58, 64) !important;
+}
+
 .body {
   max-width: 5em;
   padding: 0 1em;
